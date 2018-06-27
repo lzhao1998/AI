@@ -120,3 +120,21 @@ void test_speakToAiMachine_given_my_name_is_Zen2Sen_expect_nice_to_meet_you_Zen2
   TEST_ASSERT_EQUAL_STRING(expectedReply,reply);
   free(reply);
 }
+
+void test_speakToAiMachine_Given_bye_expect_goodbye(void)
+{
+  char *expectedReply = "Goodbye. Have a nice day!";
+  char *reply = speakToAiMachine("bye");
+  TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
+  TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
+//  free(reply);
+}
+
+void test_speakToAiMachine_Given_goodbye_expect_goodbye(void)
+{
+  char *expectedReply = "Goodbye. Have a nice day!";
+  char *reply = speakToAiMachine("goodbye");
+  TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
+  TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
+//  free(reply);
+}

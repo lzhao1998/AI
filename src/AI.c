@@ -63,10 +63,14 @@ char *speakToAiMachine(char *msg)
     //printf("PASS~~ :)\n");
     return "Hi there! My name is TheMachine. What is yours?";
   }
+  else if(stringCompare("bye",msg) == 1 || stringCompare("Goodbye",msg) == 1)
+  {
+    return "Goodbye. Have a nice day!";
+  }
   else
   {
     //total = 11; need to shift 11 time
-    char *temp,*output;
+    char *temp,*output,*reply;
     temp = (char*)malloc(11);
     int i = 0 ;
     while(i < 11)
@@ -88,18 +92,30 @@ char *speakToAiMachine(char *msg)
         j++;
       }
       //printf("output name is %s\n", output);
-      strcat(out, output);
+      /*strcat(out, output);
 
       char *output1;
       output1 = (char*)malloc(strlen(out)+1);
       strcpy(output1,out);
       int z = strlen(output);
       output1[k+j-1] = '\0';
-      return output1;
+      return output1;*/
+      reply = combineMsg(output);
+      return reply;
     }
     else
     {
       return "wtf r u talking about?";
     }
   }
+}
+
+char *combineMsg(char *msg)
+{
+  char *replyMsg = "Nice to meet you ";
+  char *tempMsg;
+  tempMsg = (char*)malloc(strlen(replyMsg)+strlen(msg)+1);
+  strcpy(tempMsg,replyMsg);
+  strcat(tempMsg, msg);
+  return tempMsg;
 }
