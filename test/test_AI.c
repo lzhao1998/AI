@@ -6,13 +6,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-void setUp(void)
-{
-}
-
-void tearDown(void)
-{
-}
+void setUp(void){}
+void tearDown(void){}
 
 void test_AI_NeedToImplement(void)
 {
@@ -30,7 +25,6 @@ void test_convert_lowercase_HELLOWORLD_expect_helloworld(void)
 {
   char *result;
   result = convertToLowerCase("HELLO WORLD!");
-
   TEST_ASSERT_EQUAL_STRING("hello world!",result);
 }
 
@@ -72,7 +66,6 @@ void test_speakToAiMachine_Given_Hi_expect_Hi_there_my_name_is_themachine_What_i
   char *reply = speakToAiMachine("hi");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-//  free(reply);
 }
 
 void test_speakToAiMachine_Given_Hey_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
@@ -81,7 +74,6 @@ void test_speakToAiMachine_Given_Hey_expect_Hi_there_my_name_is_themachine_What_
   char *reply = speakToAiMachine("hey");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-//  free(reply);
 }
 
 void test_speakToAiMachine_Given_Hello_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
@@ -90,7 +82,6 @@ void test_speakToAiMachine_Given_Hello_expect_Hi_there_my_name_is_themachine_Wha
   char *reply = speakToAiMachine("hello");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-//  free(reply);
 }
 
 void test_speakToAiMachine_Given_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
@@ -99,7 +90,6 @@ void test_speakToAiMachine_Given_Greetings_expect_Hi_there_my_name_is_themachine
   char *reply = speakToAiMachine("greeting");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-  //free(reply);
 }
 
 void test_speakToAiMachine_given_my_name_is_AppleQQ_expect_nice_to_meet_you_AppleQQ(void)
@@ -127,7 +117,6 @@ void test_speakToAiMachine_Given_bye_expect_goodbye(void)
   char *reply = speakToAiMachine("bye");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-//  free(reply);
 }
 
 void test_speakToAiMachine_Given_goodbye_expect_goodbye(void)
@@ -136,5 +125,4 @@ void test_speakToAiMachine_Given_goodbye_expect_goodbye(void)
   char *reply = speakToAiMachine("goodbye");
   TEST_ASSERT_EQUAL(strlen(reply),strlen(expectedReply));
   TEST_ASSERT_EQUAL_STRING(reply,expectedReply);
-//  free(reply);
 }

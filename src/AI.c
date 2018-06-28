@@ -30,7 +30,6 @@ int stringCompare(char *str1, char *str2)
   char *temp1,*temp2;
   temp1 = convertToLowerCase(str1);
   temp2 = convertToLowerCase(str2);
-  printf("temp1 is %s  temp2 is %s\n",temp1, temp2 );
   if(strlen(temp1) == strlen(temp2))
   {
     while(temp1[i] != '\0' || temp2[i] != '\0')
@@ -41,16 +40,16 @@ int stringCompare(char *str1, char *str2)
       }
       else
       {
-        printf("FALSE\n");
+        //FALSE
         return 0;
       }
     }
-    printf("TRUE\n");
+    //TRUE
     return 1;
   }
   else
   {
-    printf("FALSE\n");
+    //FALSE
     return 0;
   }
 
@@ -58,12 +57,11 @@ int stringCompare(char *str1, char *str2)
 
 char *speakToAiMachine(char *msg)
 {
-  if(stringCompare("hi",msg) == 1 || stringCompare("hey",msg) == 1  || stringCompare("greeting",msg) == 1 || stringCompare("hello",msg) == 1)
+  if(stringCompare("hi",msg) || stringCompare("hey",msg)  || stringCompare("greeting",msg) || stringCompare("hello",msg))
   {
-    //printf("PASS~~ :)\n");
     return "Hi there! My name is TheMachine. What is yours?";
   }
-  else if(stringCompare("bye",msg) == 1 || stringCompare("Goodbye",msg) == 1)
+  else if(stringCompare("bye",msg) || stringCompare("Goodbye",msg))
   {
     return "Goodbye. Have a nice day!";
   }
@@ -78,9 +76,7 @@ char *speakToAiMachine(char *msg)
       temp[i] = msg[i];
       i++;
     }
-    printf("msg is %s\n", msg);
-    printf("temp is %s\n", temp);
-    if(stringCompare(temp,"my name is ") == 1)
+    if(stringCompare(temp,"my name is "))
     {
       int j = 11; // "My name is "
       int k = strlen(msg) - 11;
@@ -91,15 +87,6 @@ char *speakToAiMachine(char *msg)
         output[y] = msg[j];
         j++;
       }
-      //printf("output name is %s\n", output);
-      /*strcat(out, output);
-
-      char *output1;
-      output1 = (char*)malloc(strlen(out)+1);
-      strcpy(output1,out);
-      int z = strlen(output);
-      output1[k+j-1] = '\0';
-      return output1;*/
       reply = combineMsg(output);
       return reply;
     }
